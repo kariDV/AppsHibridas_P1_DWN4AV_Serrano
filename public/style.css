@@ -1,0 +1,95 @@
+/* -------------------Header---------------------- */
+
+h1 {
+  color: rgb(234, 219, 201);
+  filter: drop-shadow(0 0px 10px rgb(15, 14, 15));
+  font-size: 3rem;
+}
+
+/*--------------------Body------------------- */
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(25, 14, 24, 1) 0%,
+    rgb(21, 21, 27) 15%,
+    rgb(46, 44, 12) 50%,
+    rgb(21, 21, 27) 85%,
+    rgba(25, 14, 24, 1) 100%
+  );
+  color: rgb(234, 219, 201);
+}
+
+/* ---------------------Nav----------------------- */
+
+.bg-nav {
+  background: rgb(11, 11, 15);
+}
+
+.logo-nav1 {
+  color: antiquewhite;
+  font-size: 1.6rem;
+}
+
+.logo-nav2 {
+  /* color: #6c3a68; */
+  color: #785275;
+  filter: drop-shadow(0 0px 7px rgb(220, 49, 226));
+  font-size: 1.5rem;
+}
+
+.text-nav-link {
+  color: rgb(82, 82, 131);
+}
+
+.btn-nav {
+  border: 3.5px solid #785275;
+  color: #785275;
+  filter: drop-shadow(0 0px 7px rgba(220, 49, 226, 0.54));
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.btn-nav:hover {
+  border: 3.5px solid rgb(82, 82, 131);
+  color: rgb(82, 82, 131);
+  filter: drop-shadow(0 0px 20px rgba(255, 255, 255, 0.952));
+}
+
+.btn-style:hover {
+  color: rgb(128, 125, 121);
+  opacity: 100%;
+}
+
+/* ------------------Footer------------------ */
+
+.footer {
+  margin-top: 15rem;
+  padding: 3rem;
+  color: antiquewhite;
+  background: linear-gradient(
+    90deg,
+    rgb(70, 27, 67) 0%,
+    rgb(39, 39, 52) 15%,
+    rgb(64, 62, 19) 50%,
+    rgb(39, 39, 52) 85%,
+    rgb(70, 27, 67) 100%
+  );
+}
+
+/* ---------------Scrollbar----------------- */
+
+body::-webkit-scrollbar {
+  width: 22px;
+  background: rgb(23, 23, 32);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 131, 0.393);
+  border-radius: 7px;
+}
+
+/* ---------------spacing----------------- */
+.padding-t {
+  padding-top: 10rem;
+}
