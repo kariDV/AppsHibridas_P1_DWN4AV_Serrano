@@ -43,4 +43,16 @@ async function updateJuegoId(id, body) {
   return juegoModificado;
 }
 
-export { getJuegos, getJuegoTitulo, getJuegoId, createJuego, updateJuegoId };
+async function deleteJuegoId(id) {
+  let juegoDelete = Juegos.findOneAndDelete({ id: id });
+  return juegoDelete;
+}
+
+export {
+  getJuegos,
+  getJuegoTitulo,
+  getJuegoId,
+  createJuego,
+  updateJuegoId,
+  deleteJuegoId,
+};

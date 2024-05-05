@@ -5,6 +5,7 @@ import {
   getJuegoId,
   createJuego,
   updateJuegoId,
+  deleteJuegoId,
 } from "../controllers/juegos_controller.js";
 
 const ruta = express.Router();
@@ -47,6 +48,14 @@ ruta.put("/update/:id", (req, res) => {
   let body = req.body;
   let id = req.params.id;
   let resultado = updateJuegoId(id, body);
+  resultado
+    .then((juego) => res.status(201).json(juego))
+    .catch((error) => res.status(400).json(error));
+});
+
+ruta.delete("/delete/:id", (req, res) => {
+  let id = req.params.id;
+  let resultado = deleteJuegoId(id);
   resultado
     .then((juego) => res.status(201).json(juego))
     .catch((error) => res.status(400).json(error));
