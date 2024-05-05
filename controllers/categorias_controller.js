@@ -10,18 +10,18 @@ async function getCategoriaNombre(cat) {
   return categoria;
 }
 
+async function getCategoriaId(id) {
+  let categoria = await Categorias.find({ id: id });
+  return categoria;
+}
+
 async function createCategoria(body) {
   let nuevaCategoria = new Categorias({
+    id: body.id,
     categoria: body.categoria,
     descripcion: body.descripcion,
   });
   return await nuevaCategoria.save();
 }
-// async function getJuegoId(id) {
-//   let juegoSelec = juegos.filter((el) => el.id === Number(id));
-//   return juegoSelec;
-// }
 
-// export { getJuegos, getJuegoId };
-
-export { getCategorias, getCategoriaNombre, createCategoria };
+export { getCategorias, getCategoriaNombre, getCategoriaId, createCategoria };

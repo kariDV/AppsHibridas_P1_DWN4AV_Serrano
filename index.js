@@ -28,11 +28,6 @@ app.get("/file", (req, res) => {
 app.use("/juego", juegos_routes);
 app.use("/categoria", categorias_routes);
 
-// endpoints de prueba
-// app.get("/saludo", (req, res) => {
-//   res.send("¡Hola, amiguis!");
-// });
-
 app.listen(port, function () {
   console.log("servidor ejecutando...");
 });
