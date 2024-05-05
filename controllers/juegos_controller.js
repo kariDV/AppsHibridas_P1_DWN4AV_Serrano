@@ -15,6 +15,20 @@ async function getJuegoCategoria(cat) {
   return juegosSelec;
 }
 
+async function getJuegosOrden() {
+  let juegos = await Juegos.find();
+  juegos.sort(function (a, b) {
+    if (a.titulo > b.titulo) {
+      return 1;
+    }
+    if (a.titulo < b.titulo) {
+      return -1;
+    }
+    return 0;
+  });
+  return juegos;
+}
+
 async function getJuegoId(id) {
   let juegoSelec = await Juegos.find({ id: id });
   return juegoSelec;
@@ -57,6 +71,7 @@ export {
   getJuegos,
   getJuegoTitulo,
   getJuegoCategoria,
+  getJuegosOrden,
   getJuegoId,
   createJuego,
   updateJuegoId,

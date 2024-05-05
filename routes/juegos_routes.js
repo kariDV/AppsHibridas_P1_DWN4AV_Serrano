@@ -3,6 +3,7 @@ import {
   getJuegos,
   getJuegoTitulo,
   getJuegoCategoria,
+  getJuegosOrden,
   getJuegoId,
   createJuego,
   updateJuegoId,
@@ -17,6 +18,8 @@ ruta.get("/", (req, res) => {
     resultado = getJuegoTitulo(req.query.titulo);
   } else if (req.query.categoria) {
     resultado = getJuegoCategoria(req.query.categoria);
+  } else if (req.query.ordenado) {
+    resultado = getJuegosOrden();
   } else {
     resultado = getJuegos();
   }
