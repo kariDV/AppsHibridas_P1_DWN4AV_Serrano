@@ -4,6 +4,7 @@ import {
   getCategoriaNombre,
   getCategoriaId,
   createCategoria,
+  updateCatId,
 } from "../controllers/categorias_controller.js";
 
 const ruta = express.Router();
@@ -37,6 +38,15 @@ ruta.get("/:id", (req, res) => {
 ruta.post("/", (req, res) => {
   let body = req.body;
   let resultado = createCategoria(body);
+  resultado
+    .then((categoria) => res.status(201).json(categoria))
+    .catch((error) => res.status(400).json(error));
+});
+
+ruta.put("/update/:id", (req, res) => {
+  let body = req.body;
+  let id = req.params.id;
+  let resultado = updateCatId(id, body);
   resultado
     .then((categoria) => res.status(201).json(categoria))
     .catch((error) => res.status(400).json(error));

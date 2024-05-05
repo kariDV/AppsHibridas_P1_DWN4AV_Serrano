@@ -24,4 +24,23 @@ async function createCategoria(body) {
   return await nuevaCategoria.save();
 }
 
-export { getCategorias, getCategoriaNombre, getCategoriaId, createCategoria };
+async function updateCatId(id, body) {
+  let cateModificada = Categorias.updateOne(
+    { id: id },
+    {
+      $set: {
+        categoria: body.categoria,
+        descripcion: body.descripcion,
+      },
+    }
+  );
+  return cateModificada;
+}
+
+export {
+  getCategorias,
+  getCategoriaNombre,
+  getCategoriaId,
+  createCategoria,
+  updateCatId,
+};
