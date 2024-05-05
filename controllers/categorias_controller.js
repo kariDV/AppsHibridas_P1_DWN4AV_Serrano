@@ -1,17 +1,17 @@
-import Categoria from "../models/categorias_model.js";
+import Categorias from "../models/categorias_model.js";
 
 async function getCategorias() {
-  let categoria = await Categoria.find();
+  let categoria = await Categorias.find();
   return categoria;
 }
 
 async function getCategoriaNombre(cat) {
-  let categoria = await Categoria.find({ categoria: cat });
+  let categoria = await Categorias.find({ categoria: cat });
   return categoria;
 }
 
 async function createCategoria(body) {
-  let nuevaCategoria = new Categoria({
+  let nuevaCategoria = new Categorias({
     categoria: body.categoria,
     descripcion: body.descripcion,
   });
