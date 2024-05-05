@@ -10,9 +10,14 @@ async function getJuegoTitulo(tit) {
   return juegoSelec;
 }
 
+async function getJuegoId(id) {
+  let juegoSelec = await Juegos.find({ id: id });
+  return juegoSelec;
+}
+
 async function createJuego(body) {
   let nuevoJuego = new Juegos({
-    //TENGO QUE PONER JUEGOS?
+    id: body.id,
     titulo: body.titulo,
     categoria: body.categoria,
     editorial: body.editorial,
@@ -22,4 +27,4 @@ async function createJuego(body) {
   return await nuevoJuego.save();
 }
 
-export { getJuegos, getJuegoTitulo, createJuego };
+export { getJuegos, getJuegoTitulo, getJuegoId, createJuego };
