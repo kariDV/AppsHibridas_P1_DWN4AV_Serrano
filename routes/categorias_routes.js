@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getCategorias,
+  getCategoriaNombre,
   createCategoria,
 } from "../controllers/categorias_controller.js";
 
@@ -10,6 +11,20 @@ ruta.get("/", (req, res) => {
   let resultado = getCategorias();
   resultado
     .then((categorias) => res.status(200).json(categorias))
+    .catch((error) => res.status(400).json(error));
+});
+
+ruta.get("/:categoria", (req, res) => {
+  let categoria = req.params.categoria;
+  let resultado = getCategoriaNombre(categoria);
+  resultado
+    .then((cat) => {
+      if (cat.length) {
+        res.status(200).json(cat);
+      } else {
+        res.status(200).send("No se encontró la categoría");
+      }
+    })
     .catch((error) => res.status(400).json(error));
 });
 

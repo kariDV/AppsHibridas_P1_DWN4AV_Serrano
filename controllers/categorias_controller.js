@@ -5,6 +5,11 @@ async function getCategorias() {
   return categoria;
 }
 
+async function getCategoriaNombre(cat) {
+  let categoria = await Categoria.find({ categoria: cat });
+  return categoria;
+}
+
 async function createCategoria(body) {
   let nuevaCategoria = new Categoria({
     categoria: body.categoria,
@@ -19,4 +24,4 @@ async function createCategoria(body) {
 
 // export { getJuegos, getJuegoId };
 
-export { getCategorias, createCategoria };
+export { getCategorias, getCategoriaNombre, createCategoria };
