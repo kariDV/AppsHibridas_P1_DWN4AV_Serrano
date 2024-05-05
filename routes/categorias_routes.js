@@ -5,6 +5,7 @@ import {
   getCategoriaId,
   createCategoria,
   updateCatId,
+  deleteCatId,
 } from "../controllers/categorias_controller.js";
 
 const ruta = express.Router();
@@ -47,6 +48,14 @@ ruta.put("/update/:id", (req, res) => {
   let body = req.body;
   let id = req.params.id;
   let resultado = updateCatId(id, body);
+  resultado
+    .then((categoria) => res.status(201).json(categoria))
+    .catch((error) => res.status(400).json(error));
+});
+
+ruta.delete("/delete/:id", (req, res) => {
+  let id = req.params.id;
+  let resultado = deleteCatId(id);
   resultado
     .then((categoria) => res.status(201).json(categoria))
     .catch((error) => res.status(400).json(error));

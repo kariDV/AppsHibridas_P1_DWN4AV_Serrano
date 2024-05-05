@@ -37,10 +37,16 @@ async function updateCatId(id, body) {
   return cateModificada;
 }
 
+async function deleteCatId(id) {
+  let catDelete = Categorias.findOneAndDelete({ id: id });
+  return catDelete;
+}
+
 export {
   getCategorias,
   getCategoriaNombre,
   getCategoriaId,
   createCategoria,
   updateCatId,
+  deleteCatId,
 };
