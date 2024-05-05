@@ -2,6 +2,7 @@ import express from "express";
 import {
   getJuegos,
   getJuegoTitulo,
+  getJuegoCategoria,
   getJuegoId,
   createJuego,
   updateJuegoId,
@@ -14,6 +15,8 @@ ruta.get("/", (req, res) => {
   let resultado;
   if (req.query.titulo) {
     resultado = getJuegoTitulo(req.query.titulo);
+  } else if (req.query.categoria) {
+    resultado = getJuegoCategoria(req.query.categoria);
   } else {
     resultado = getJuegos();
   }

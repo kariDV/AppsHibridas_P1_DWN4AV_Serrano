@@ -10,6 +10,11 @@ async function getJuegoTitulo(tit) {
   return juegoSelec;
 }
 
+async function getJuegoCategoria(cat) {
+  let juegosSelec = await Juegos.find({ categoria: cat });
+  return juegosSelec;
+}
+
 async function getJuegoId(id) {
   let juegoSelec = await Juegos.find({ id: id });
   return juegoSelec;
@@ -51,6 +56,7 @@ async function deleteJuegoId(id) {
 export {
   getJuegos,
   getJuegoTitulo,
+  getJuegoCategoria,
   getJuegoId,
   createJuego,
   updateJuegoId,
