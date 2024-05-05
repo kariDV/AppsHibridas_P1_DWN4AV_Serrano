@@ -27,4 +27,20 @@ async function createJuego(body) {
   return await nuevoJuego.save();
 }
 
-export { getJuegos, getJuegoTitulo, getJuegoId, createJuego };
+async function updateJuegoId(id, body) {
+  let juegoModificado = Juegos.updateOne(
+    { id: id },
+    {
+      $set: {
+        titulo: body.titulo,
+        categoria: body.categoria,
+        editorial: body.editorial,
+        tiempoDeJuego: body.tiempoDeJuego,
+        precio: body.precio,
+      },
+    }
+  );
+  return juegoModificado;
+}
+
+export { getJuegos, getJuegoTitulo, getJuegoId, createJuego, updateJuegoId };

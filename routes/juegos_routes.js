@@ -4,6 +4,7 @@ import {
   getJuegoTitulo,
   getJuegoId,
   createJuego,
+  updateJuegoId,
 } from "../controllers/juegos_controller.js";
 
 const ruta = express.Router();
@@ -37,6 +38,15 @@ ruta.get("/:id", (req, res) => {
 ruta.post("/", (req, res) => {
   let body = req.body;
   let resultado = createJuego(body);
+  resultado
+    .then((juego) => res.status(201).json(juego))
+    .catch((error) => res.status(400).json(error));
+});
+
+ruta.put("/update/:id", (req, res) => {
+  let body = req.body;
+  let id = req.params.id;
+  let resultado = updateJuegoId(id, body);
   resultado
     .then((juego) => res.status(201).json(juego))
     .catch((error) => res.status(400).json(error));
