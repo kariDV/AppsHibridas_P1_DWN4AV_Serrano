@@ -3,6 +3,7 @@ import {
   getJuegos,
   getJuegoTitulo,
   getJuegoCategoria,
+  getJuegosPagina,
   getJuegosOrden,
   getJuegoId,
   createJuego,
@@ -14,13 +15,24 @@ const ruta = express.Router();
 
 ruta.get("/", (req, res) => {
   let resultado;
+  // busqueda de juegos por titulo
   if (req.query.titulo) {
     resultado = getJuegoTitulo(req.query.titulo);
-  } else if (req.query.categoria) {
+  }
+  // busqueda de juegos por categoria
+  else if (req.query.categoria) {
     resultado = getJuegoCategoria(req.query.categoria);
-  } else if (req.query.ordenado) {
+  }
+  // busqueda de juegos con paginado
+  else if (req.query.pagina) {
+    resultado = getJuegosPagina(req.query.pagina);
+  }
+  // busqueda de juegos ordenados por titulo
+  else if (req.query.ordenado) {
     resultado = getJuegosOrden();
-  } else {
+  }
+  // busqueda de todos los juegos
+  else {
     resultado = getJuegos();
   }
   resultado

@@ -15,6 +15,14 @@ async function getJuegoCategoria(cat) {
   return juegosSelec;
 }
 
+async function getJuegosPagina(pagina) {
+  let limite = 2;
+  let juegos = await Juegos.find()
+    .skip((pagina - 1) * limite)
+    .limit(limite);
+  return juegos;
+}
+
 async function getJuegosOrden() {
   let juegos = await Juegos.find();
   juegos.sort(function (a, b) {
@@ -71,6 +79,7 @@ export {
   getJuegos,
   getJuegoTitulo,
   getJuegoCategoria,
+  getJuegosPagina,
   getJuegosOrden,
   getJuegoId,
   createJuego,
