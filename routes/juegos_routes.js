@@ -11,6 +11,7 @@ import {
   updateJuegoId,
   deleteJuegoId,
 } from "../controllers/juegos_controller.js";
+import verificarToken from "../middlewares/auth.js";
 
 const ruta = express.Router();
 
@@ -64,7 +65,7 @@ ruta.get("/:id", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.post("/", (req, res) => {
+ruta.post("/", verificarToken, (req, res) => {
   let body = req.body;
 
   const { error, value } = schemaJuego.validate({
@@ -95,7 +96,7 @@ ruta.put("/update/:id", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.delete("/delete/:id", (req, res) => {
+ruta.delete("/delete/:id", verificarToken, (req, res) => {
   let id = req.params.id;
   let resultado = deleteJuegoId(id);
   resultado
