@@ -1,4 +1,5 @@
 import express from "express";
+import Joi from "joi";
 import {
   getJuegos,
   getJuegoTitulo,
@@ -12,6 +13,15 @@ import {
 } from "../controllers/juegos_controller.js";
 
 const ruta = express.Router();
+
+const schemaJuego = Joi.object({
+  id: Joi.number().integer().required(),
+  titulo: Joi.string().min(3).max(30).required(),
+  categoria: Joi.string().min(3).max(15).required(),
+  editorial: Joi.string().min(3).max(20),
+  tiempoDeJuego: Joi.number().integer().min(1).max(240),
+  precio: Joi.number().min(100).max(750000),
+});
 
 ruta.get("/", (req, res) => {
   let resultado;
@@ -56,10 +66,24 @@ ruta.get("/:id", (req, res) => {
 
 ruta.post("/", (req, res) => {
   let body = req.body;
-  let resultado = createJuego(body);
-  resultado
-    .then((juego) => res.status(201).json(juego))
-    .catch((error) => res.status(400).json(error));
+
+  const { error, value } = schemaJuego.validate({
+    id: body.id,
+    titulo: body.titulo,
+    categoria: body.categoria,
+    editorial: body.editorial,
+    tiempoDeJuego: body.tiempoDeJuego,
+    precio: body.precio,
+  });
+
+  if (!error) {
+    let resultado = createJuego(body);
+    resultado
+      .then((juego) => res.status(201).json(juego))
+      .catch((error) => res.status(400).json(error));
+  } else {
+    res.status(400).json(error);
+  }
 });
 
 ruta.put("/update/:id", (req, res) => {
