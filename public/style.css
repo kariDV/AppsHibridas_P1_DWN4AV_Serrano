@@ -2,6 +2,9 @@
 .fuente1 {
   font-family: "Josefin Slab", serif;
   font-weight: 600;
+  color: rgb(139, 126, 37);
+  filter: drop-shadow(0 0px 20px rgb(15, 0, 15));
+  font-size: 3.3rem;
 }
 
 .fuente2 {
@@ -50,12 +53,6 @@ p {
 }
 
 /* -------------------Header---------------------- */
-
-h1 {
-  color: rgb(234, 219, 201);
-  filter: drop-shadow(0 0px 10px rgb(15, 14, 15));
-  font-size: 3rem;
-}
 
 /* ----------------box código ------------------ */
 .box-code {
