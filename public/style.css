@@ -45,6 +45,10 @@ p {
   margin: 0rem 0rem 3rem 0rem;
 }
 
+.link-doc {
+  color: #d39bce6d;
+}
+
 /* -------------------Header---------------------- */
 
 h1 {
@@ -99,6 +103,11 @@ body {
 }
 
 .input-group-text {
+  background: rgba(139, 80, 155, 0.53);
+  border: 1px solid #d39bce6d;
+  filter: drop-shadow(0 0px 5px rgb(72, 69, 19));
+  font-size: 1.2rem;
+  color: rgb(13, 2, 50);
 }
 
 .form-textarea:focus {
@@ -182,6 +191,24 @@ textarea::-webkit-scrollbar-thumb {
   filter: drop-shadow(0 0px 7px rgba(220, 49, 226, 0.54));
   font-weight: bold;
   border-radius: 12px;
+  transition: 1s;
+}
+
+.btn-solicitud {
+  color: antiquewhite;
+  background: rgb(100, 44, 96);
+  border: 1px solid #785275;
+  filter: drop-shadow(0 0px 7px rgba(129, 111, 13, 0.756));
+  font-size: 1.2rem;
+  transition: 1s;
+}
+
+.btn-solicitud:hover {
+  color: antiquewhite;
+  background: rgb(93, 33, 89);
+  border: 1px solid #785275;
+  filter: drop-shadow(0 0px 12px rgba(177, 161, 69, 0.756));
+  font-size: 1.2rem;
   transition: 1s;
 }
 

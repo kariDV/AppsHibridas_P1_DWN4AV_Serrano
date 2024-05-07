@@ -34,10 +34,10 @@
           </div>
 
           <div>
-            <ul class="m-2">
-              <button class="btn text-nav-link">API|Boards</button>
-              <button class="btn text-nav-link">Docs</button>
-              <button class="btn btn-nav btn-clear">
+            <div class="m-2">
+              <a href="#intro" class="btn text-nav-link">API|Boards</a>
+              <a href="#doc" class="btn text-nav-link">Docs</a>
+              <a href="#endpoints" class="btn btn-nav btn-clear">
                 Endpoints
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +51,8 @@
                     d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
                   />
                 </svg>
-              </button>
-            </ul>
+              </a>
+            </div>
           </div>
         </div>
       </nav>
@@ -77,8 +77,8 @@
     </div>
     <!-- ----------------------------------Info 1--- -->
     <div class="container">
-      <div class="margin-doc">
-        <h2>Contenido de la Api RestFul</h2>
+      <div class="margin-doc" id="intro">
+        <h2>Contenido de la Api Rest</h2>
         <hr />
         <!-- ------------------------ -->
         <div class="py-4">
@@ -111,7 +111,7 @@
               eurogames, buscando por nombre o ID, y organiza los juegos según
               estas categorías.
             </li>
-            <li class="py-2">
+            <li class="py-2" id="doc">
               Ordenar y filtrar resultados: Personaliza tus consultas utilizando
               opciones de ordenamiento y filtrado para organizar y refinar los
               resultados según tus preferencias.
@@ -130,7 +130,7 @@
             <ul class="flex-column">
               <li>
                 <a
-                  class="text-nowrap"
+                  class="text-nowrap link-doc"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseJuegos"
@@ -145,7 +145,7 @@
 
               <li>
                 <a
-                  class="text-nowrap"
+                  class="text-nowrap link-doc"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseCategorias"
@@ -178,7 +178,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -202,7 +202,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -219,10 +219,14 @@
                   filtrar un <span class="fuente2">juego eurogame</span> por el
                   <strong>título</strong>
                 </h3>
-                <p>Filtrado de</p>
+                <p>
+                  Filtrado de la lista de eurogames por el
+                  <strong>titulo</strong>. En caso de ser más de una palabra
+                  utilizar para el espacio entre las mismas <strong>%20</strong>
+                </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -243,13 +247,12 @@
                   <span class="fuente2">juegos eurogames</span>
                 </h3>
                 <p>
-                  NO placeholder content for the collapse component. This panel
-                  is hidden by default but revealed when the user activates the
-                  relevant trigger.
+                  Ordenamiento de los títulos de los juegos con el parametro
+                  <strong>?ordenado=true</strong>
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -274,7 +277,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -308,7 +311,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -331,7 +334,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -355,7 +358,7 @@
                 </p>
 
                 <!-- endpoint -->
-                <div class="text-center">
+                <div>
                   <div class="box-code">
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
@@ -372,17 +375,14 @@
         </div>
       </div>
       <!-- -------------------------------Info 2--- -->
-      <div>
+      <div id="endpoints">
         <h2>Prueba los Endpoints</h2>
         <hr />
 
-        <div
-          class="container-fluid h-100 d-flex align-items-center justify-content-center"
-        >
-          <div class="mb-3 col-10">
-            <label for="basic-url" class="form-label"
-              >Acciones con método GET</label
-            >
+        <span>Acciones con método GET</span>
+
+        <div class="d-flex align-items-center justify-content-center">
+          <div class="col-10">
             <div class="input-group">
               <span class="input-group-text" id="basic-addon3"
                 >https://apiboards.dev/</span
@@ -397,9 +397,15 @@
           </div>
 
           <div class="col-2">
-            <button class="btn btn-primary" id="btn-endpoint-api" type="submit">
-              Solicitar
-            </button>
+            <div class="d-flex justify-content-end">
+              <button
+                class="ms-3 btn btn-solicitud w-100"
+                id="btn-endpoint-api"
+                type="submit"
+              >
+                Solicitar
+              </button>
+            </div>
           </div>
         </div>
 
