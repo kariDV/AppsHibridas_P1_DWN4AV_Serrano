@@ -87,6 +87,12 @@ body {
   color: antiquewhite;
 }
 
+.img-portada {
+  filter: drop-shadow(0 0px 50px rgba(181, 65, 213, 0.41));
+  width: 120%;
+  padding-top: 3rem;
+}
+
 /* ---------------------Form--------------------- */
 .form-textarea {
   color: antiquewhite;
@@ -177,6 +183,10 @@ textarea::-webkit-scrollbar-thumb {
 .text-nav-link {
   color: rgb(107, 107, 162);
   transition: 1s;
+}
+
+.navbar-api:hover {
+  color: antiquewhite;
 }
 
 .text-nav-link:hover {

@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Prototipo API</title>
+    <title>API|Boards</title>
   </head>
   <header>
     <!-- -----------------NAVBAR--------------------- -->
@@ -70,7 +70,11 @@
       <div class="row d-flex justify-content-center container-cards">
         <div class="pt-4 col-lg-4 col-md-6 col-sm-12">
           <div>
-            <img src="img/img-portada.jpg" class="img-fluid" alt="imagen" />
+            <img
+              src="img/prueba.png"
+              class="img-fluid img-portada"
+              alt="imagen"
+            />
           </div>
         </div>
       </div>
@@ -271,9 +275,8 @@
                   <span class="fuente2">juegos eurogames</span>
                 </h3>
                 <p>
-                  NO placeholder content for the collapse component. This panel
-                  is hidden by default but revealed when the user activates the
-                  relevant trigger.
+                  Se trae la lista en página de 2 juegos, agregando el valor
+                  <strong>?pagina=NUMERO DE PÁGINA</strong>. Ejemplo:
                 </p>
 
                 <!-- endpoint -->
@@ -283,7 +286,7 @@
                       <span class="fuente3 espacio-text">Get</span>
                       http://apiboards.dev/
                       <span class="badge text-bg-secondary"
-                        >juego/?titulo=love%20letter</span
+                        >juego/?pagina=3</span
                       >
                     </p>
                   </div>
@@ -305,9 +308,8 @@
                   los juegos
                 </h3>
                 <p>
-                  NO placeholder content for the collapse component. This panel
-                  is hidden by default but revealed when the user activates the
-                  relevant trigger.
+                  El endpoint <strong>categoria</strong> trae la lista completa
+                  de la colección de Juegos Eurogame.
                 </p>
 
                 <!-- endpoint -->
@@ -328,9 +330,8 @@
                   filtrar una <span class="fuente2">categoría</span> por su id
                 </h3>
                 <p>
-                  NO placeholder content for the collapse component. This panel
-                  is hidden by default but revealed when the user activates the
-                  relevant trigger.
+                  Filtrado de la lista de juego por <strong>id</strong>.
+                  Ejemplo:
                 </p>
 
                 <!-- endpoint -->
@@ -352,9 +353,8 @@
                   título
                 </h3>
                 <p>
-                  NO placeholder content for the collapse component. This panel
-                  is hidden by default but revealed when the user activates the
-                  relevant trigger.
+                  Filtrado de la lista de eurogames por una
+                  <strong>categoria</strong>. Ejemplo:
                 </p>
 
                 <!-- endpoint -->
@@ -363,7 +363,7 @@
                     <p>
                       <span class="fuente3 espacio-text">Get</span>
                       http://apiboards.dev/<span class="badge text-bg-secondary"
-                        >categoria/?titulo=estrategia</span
+                        >juego/?categoria=Estrategia</span
                       >
                     </p>
                   </div>
